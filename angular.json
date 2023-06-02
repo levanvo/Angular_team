@@ -14,7 +14,7 @@
       "sourceRoot": "src",
       "prefix": "app",
       "architect": {
-        "build": {
+        "build": {xsax
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
             "outputPath": "dist/base",
