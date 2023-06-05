@@ -34,13 +34,12 @@ const registerController = async (req, res) => {
 
 const loginController = async (req, res) => {
   try {
+    const { email, password } = await login.validateAsync(req.body);
     const { error } = login.validate(req.body, { abortEarly: false });
     if (error) {
       return res.status(400).json({ error: error.message });
     }
-
-    const { email, password } = await login.validateAsync(req.body);
-    const userFound = await user.findOne({ where: { email } });
+    const userFound = await user.findOne( { email } );
     if (!userFound) {
       return res.status(400).json({ error: "Email or password is wrong" });
     }

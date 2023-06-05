@@ -1,0 +1,12 @@
+{
+  "products": [
+    {
+      "product_name": "Iphone 6",
+      "product_price": 500,
+      "product_desc": "This is a very good phone",
+      "product_CategoryId": "647dc33b3be9faf8eb699109",
+      "product_description": "This is a very good phone",
+      "product_quantity": 10
+    }
+  ]
+}

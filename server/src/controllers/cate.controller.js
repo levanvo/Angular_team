@@ -2,8 +2,8 @@ const categories = require("../models/category.model");
 
 const createCategory = async (req, res) => {
   try {
-    const { category_name } = req.body;
-    const data = await categories.create({ category_name });
+    const body = req.body;
+    const data = await categories.create(body);
     if (!data) {
       return res.status(400).json({
         msg: "Create category failed",
@@ -55,8 +55,44 @@ const getAllCategory = async (req, res) => {
     return res.status(400).json({ error: error.message });
   }
 };
+const getCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await categories.findById(id).populate("category_products");
+    if (!data) {
+      return res.status(400).json({
+        msg: "Get category failed",
+      });
+    }
+    return res.status(201).json({
+      msg: "Get category successfully",
+      data,
+    });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
+const deleteCategory = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const data = await categories.findByIdAndDelete(id);
+    if (!data) {
+      return res.status(400).json({
+        msg: "Delete category failed",
+      });
+    }
+    return res.status(201).json({
+      msg: "Delete category successfully",
+      data,
+    });
+  } catch (error) {
+    return res.status(400).json({ error: error.message });
+  }
+};
 module.exports = {
   createCategory,
   updateCategory,
   getAllCategory,
+  getCategory,
+  deleteCategory,
 };
