@@ -1,5 +1,5 @@
 require("dotenv").config({
-  path: process.env.NODE_ENV === "development" ? ".env.dev" : ".env",
+  path: '.env'
 });
 
 const app = require("./src/app");
