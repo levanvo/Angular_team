@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Auth List </h1>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <td>#</td>
+                <td>Name</td>
+                <td>Email</td>
+                <td>Pass</td>
+
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody *ngIf="auth &&auth.length">
+            <tr *ngFor="let auth of auth,index as i">
+                <td>{{i+1}}</td>
+                <td>{{auth.name}}</td>
+                <td>{{auth.email}}</td>
+                <td>{{auth.pass}}</td>
+
+                <td><button class="btn btn-danger" (click)="removeItem(auth.id)">Xóa </button>
+                    <button class="btn btn-primary ms-1"><a class="text-decoration-none text-light"
+                            [routerLink]="['/admin/auth',auth.id,'edit']">Sửa</a></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary ms-1"><a class="text-decoration-none text-light"
+            routerLink="/admin/addauth">Thêm</a></button>
+</div>

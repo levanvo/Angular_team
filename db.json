@@ -1,0 +1,68 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Du an 1 update",
+      "price": 10,
+      "image": "https://images.hdqwalls.com/wallpapers/thumb/marvel-duel-iron-man-4k-vm.jpg",
+      "des": "Đây là dự án 1"
+    },
+    {
+      "id": 2,
+      "name": "Du an 2",
+      "price": 20,
+      "image": "https://images.hdqwalls.com/wallpapers/thumb/marvel-duel-iron-man-4k-vm.jpg",
+      "des": "Đây là dự án 2"
+    },
+    {
+      "id": 3,
+      "name": "Du an 3",
+      "price": 30,
+      "image": "https://images.hdqwalls.com/wallpapers/thumb/marvel-duel-iron-man-4k-vm.jpg",
+      "des": "Đây là dự án 3"
+    },
+    {
+      "name": "Dự án 4",
+      "price": "010",
+      "image": "https://images.hdqwalls.com/wallpapers/thumb/john-wick-x-skull-5k-cb.jpg",
+      "des": "Đây là dự án 4",
+      "id": 4
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Danh muc 1 update"
+    },
+    {
+      "name": "Danh muc 2 update",
+      "id": 2
+    },
+    {
+      "name": "Danh muc 3",
+      "id": 3
+    }
+  ],
+  "auth": [
+    {
+      "id": 2,
+      "name": "Phạm Tiến 2 update",
+      "email": "tien04@gmail.con",
+      "pass": "1234567",
+      "repass": "1234567"
+    },
+    {
+      "id": 2,
+      "name": "Phạm Tiến 3",
+      "email": "tien05@gmail.con",
+      "pass": "1234567",
+      "repass": "1234567"
+    },
+    {
+      "name": "Phạm Tiến",
+      "email": "admin@gmail.com",
+      "pass": "1234567",
+      "id": 3
+    }
+  ]
+}

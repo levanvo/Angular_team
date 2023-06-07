@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="h1">
+        <h1>Product List</h1>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Image</th>
+                <th>Des</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="product && product.length">
+            <tr *ngFor=" let product of product,index as i">
+                <td>{{i+1}}</td>
+                <td>{{product.name}}</td>
+                <td>{{product.price}}</td>
+                <td><img style="height:100px" src={{product.image}} alt=""></td>
+                <td>{{product.des}}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="removeItem(product.id)">Xóa</button>
+                    <button class="btn btn-primary ms-1"><a class="text-decoration-none text-light"
+                            [routerLink]="['/admin/product',product.id,'edit']">Sửa</a></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary"><a class="text-decoration-none text-light" routerLink="/admin/addpro">Thêm
+        </a></button>
+</div>

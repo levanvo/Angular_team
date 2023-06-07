@@ -1,0 +1,20 @@
+<div class="container">
+    <h1>Add Auth </h1>
+    <form class="mb-3" (submit)="onHandleSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="name" [(ngModel)]="auth.name" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Email</label>
+            <input type="name" [(ngModel)]="auth.email" name="email" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Pass</label>
+            <input type="name" [(ngModel)]="auth.pass" name="pass" class="form-control" required>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit">Thêm</button>
+    </form>

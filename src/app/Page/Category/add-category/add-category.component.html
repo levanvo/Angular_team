@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Add Category </h1>
+    <form class="mb-3" (submit)="onHandleSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="name" [(ngModel)]="category.name" name="name" class="form-control" required>
+        </div>
+
+        <button class="btn btn-primary" type="submit">Thêm</button>
+    </form>

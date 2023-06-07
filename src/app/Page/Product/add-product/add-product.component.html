@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Add Product </h1>
+    <form class="mb-3" (submit)="onHandleSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input type="name" [(ngModel)]="product.name" name="name" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="name" [(ngModel)]="product.price" name="price" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Image</label>
+            <input type="name" [(ngModel)]="product.image" name="image" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Des</label>
+            <input type="name" [(ngModel)]="product.des" name="des" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label for="category" class="form-label">Category</label>
+            <select id="category" name="category">
+                <option *ngFor="let category of category" [value]="category" [(ngModel)]="category.name" required>
+                    {{category.name}}</option>
+
+            </select>
+        </div>
+        <button class="btn btn-primary" type="submit">Thêm</button>
+    </form>
+</div>

@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="h1">
+        <h1>Category List</h1>
+    </div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody *ngIf="category && category.length">
+            <tr *ngFor=" let category of category,index as i">
+                <td>{{i+1}}</td>
+                <td>{{category.name}}</td>
+
+                <td>
+                    <button class="btn btn-danger" (click)="removeItem(category.id)">Xóa</button>
+                    <button class="btn btn-primary ms-1"><a class="text-decoration-none text-light"
+                            [routerLink]="['/admin/category',category.id,'edit']">Sửa</a></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-primary"><a class="text-decoration-none text-light" routerLink="/admin/addcategory">Thêm
+        </a></button>
+</div>
