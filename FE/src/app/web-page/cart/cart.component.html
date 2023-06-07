@@ -1,18 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog</title>
 </head>
+
 <body>
     <div class="w-[100vw] h-[460px] relative">
-        <img class="w-[100vw] h-[460px] " src="https://img.freepik.com/premium-photo/woman-s-hand-is-small-empty-metal-trolley-from-supermarket-banner-buyer-close-up_262708-3682.jpg?w=2000" alt="">
+        <img class="w-[100vw] h-[460px] "
+            src="https://img.freepik.com/premium-photo/woman-s-hand-is-small-empty-metal-trolley-from-supermarket-banner-buyer-close-up_262708-3682.jpg?w=2000"
+            alt="">
         <div class="absolute left-[50%] top-[28%]">
             <h2 class=" text-6xl font-bold text-white">Cart</h2>
             <h3 class=" text-xl -ml-[35%] mt-2 text-gray-100">Control your cart and checkout here</h3>
         </div>
     </div>
+    <div class="container">
+        <h1 class="title">CART</h1>
+        <div class="cart-items">
+            <div class="cart-item">
+                <div class="product-image">
+                    <img src="product1.jpg" alt="PRODUCT 1">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">PRODUCT 1</h3>
+                    <p class="product-price">$29.99</p>
+                    <div class="quantity">
+                        <input type="number" min="1" value="1">
+                        <button class="remove-button">DELETE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item">
+                <div class="product-image">
+                    <img src="product2.jpg" alt="PRODUCT 2">
+                </div>
+                <div class="product-details">
+                    <h3 class="product-name">PRODUCT 2</h3>
+                    <p class="product-price">$39.99</p>
+                    <div class="quantity">
+                        <input type="number" min="1" value="1">
+                        <button class="remove-button">DELETE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-total">
+            <p class="subtotal">Total: $69.98</p>
+        </div>
+        <div class="checkout">
+            <button class="checkout-button">Done</button>
+        </div>
+    </div>
 </body>
+
 </html>
