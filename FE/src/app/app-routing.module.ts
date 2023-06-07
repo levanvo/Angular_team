@@ -7,6 +7,7 @@ import { CategoryComponent } from './web-page/category/category.component';
 import { BlogComponent } from './web-page/blog/blog.component';
 import { ContactComponent } from './web-page/contact/contact.component';
 import { CartComponent } from './web-page/cart/cart.component';
+import { DetailsPrComponent } from './web-page/details-pr/details-pr.component';
 
 const routes: Routes = [
   {path:"",component:WebPageComponent,children:[
@@ -15,6 +16,7 @@ const routes: Routes = [
     {path:"blog/:id",component:BlogComponent},
     {path:"contact/:id",component:ContactComponent},
     {path:"cart/:id",component:CartComponent},
+    {path:"details/:id",component:DetailsPrComponent},
   ]},
   {path:"admin/:id",component:AdminComponent,children:[
     

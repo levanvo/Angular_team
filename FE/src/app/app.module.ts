@@ -16,6 +16,7 @@ import { ContactComponent } from './web-page/contact/contact.component';
 import { CartComponent } from './web-page/cart/cart.component';
 import { LoginComponent } from './admin/login/login.component';
 import { LogupComponent } from './admin/logup/logup.component'; 
+import { DetailsPrComponent } from './web-page/details-pr/details-pr.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,9 @@ import { LogupComponent } from './admin/logup/logup.component';
     BlogComponent,
     ContactComponent,
     CartComponent,
+    DetailsPrComponent,
+    LoginComponent,
+    LogupComponent,
   ],
   imports: [
     BrowserModule,

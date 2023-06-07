@@ -26,7 +26,7 @@ export class ServiceService {
     return this.http.put<any[]>(`http://localhost:8080/pr/${data._id}`,data);
   };
   removePr(_id:any):Observable<any[]>{
-    return this.http.get<any[]>(`http://localhost:8080/pr/${_id}`);
+    return this.http.delete<any[]>(`http://localhost:8080/pr/${_id}`);
   };
 
 
@@ -44,7 +44,7 @@ export class ServiceService {
     return this.http.put<any[]>(`http://localhost:8080/ct/${data._id}`,data);
   };
   removeCt(_id:any):Observable<any[]>{
-    return this.http.get<any[]>(`http://localhost:8080/ct/${_id}`);
+    return this.http.delete<any[]>(`http://localhost:8080/ct/${_id}`);
   };
 
 
