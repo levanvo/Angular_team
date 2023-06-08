@@ -23,6 +23,8 @@ const SchemaJoi_Signup=joi.object({
         "any.required":"Bắt buộc nhập repass",
         "any.only":"Không trùng với pass"
     }),
+    status:joi.boolean(),
+    image:joi.string(),
 });
 const SchemaJoi_Signin=joi.object({
     email:joi.string().required().email().messages({
@@ -54,6 +56,8 @@ export const Signup=async(req,res)=>{
             name:body.name,
             email:body.email,
             pass:hashPass,
+            status:false,
+            image:"https://picsum.photos/300",
         });
 
         const token=await jwt.sign({_id:data._id},"susi",{expiresIn:"15d"});
@@ -84,8 +88,30 @@ export const Signin=async(req,res)=>{
 }
 export const AllAuthor=async(req,res)=>{
     try{
-        const body =req.body;
         const data=await SchemaMG_At.find();
         return res.json({message:"Tất cả users: ",data});
-    }catch(error){return res.status(400).json("try catch Signin Error !!")};
+    }catch(error){return res.status(400).json("try catch get All user !!")};
+}
+export const GetOneAuthor=async (req,res)=>{
+    try{
+        const data = await SchemaMG_At.findOne({ _id: req.params.id });
+        return res.json({ message: " Thay 1 user:===>> ", data });
+    }catch(error){
+        return res.status(400).json("try catch get One user !!")
+    }
+}
+export const RemoveAuthor=async (req,res)=>{
+    try{
+        const data = await SchemaMG_At.findByIdAndDelete(req.params.id);
+        return res.json({ message: " Xoa 1 user:===>> ", data });
+    }catch(error){
+        return res.status(400).json("try catch Remove user !!")
+    }
+}
+export const UpdateAuthor = async (req, res) => {
+    try {
+        const body = req.body;
+        const data = await SchemaMG_At.findByIdAndUpdate(req.params.id, body, { new: true });
+        return res.json({ message: " Them 1 user: ===>> ", data });
+    } catch (error) { return res.status(400).json("Try catch Add user.....") };
 }

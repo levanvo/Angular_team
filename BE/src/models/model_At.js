@@ -3,6 +3,7 @@ import mongoose, { mongo } from "mongoose"
 const SchemaMG_At = mongoose.Schema(
     {
         name: String,
+        image:String,
         email: {
             type:String,
             unique:true,
@@ -12,6 +13,8 @@ const SchemaMG_At = mongoose.Schema(
             type:String,
             required:true
         },
+        cart:[],
+        status:Boolean,
         role:String,
     },
     {timestamps:true,versionKey:false}
