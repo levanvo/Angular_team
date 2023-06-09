@@ -15,6 +15,7 @@ import { AddCategoryComponent } from './Page/Category/add-category/add-category.
 import { UpdateCategoryComponent } from './Page/Category/update-category/update-category.component';
 import { AddAuthComponent } from './Page/Auth/add-auth/add-auth.component';
 import { UpdateAuthComponent } from './Page/Auth/update-auth/update-auth.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { UpdateAuthComponent } from './Page/Auth/update-auth/update-auth.compone
     AddCategoryComponent,
     UpdateCategoryComponent,
     AddAuthComponent,
-    UpdateAuthComponent
+    UpdateAuthComponent,
+    AdminPageComponent
   ],
   imports: [
     BrowserModule,

@@ -10,11 +10,14 @@ import { AddCategoryComponent } from './Page/Category/add-category/add-category.
 import { UpdateCategoryComponent } from './Page/Category/update-category/update-category.component';
 import { AddAuthComponent } from './Page/Auth/add-auth/add-auth.component';
 import { UpdateAuthComponent } from './Page/Auth/update-auth/update-auth.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
 
 
 const routes: Routes = [
   {
-    path: 'admin', component: DashbroadComponent, children: [
+    path: 'admin', component: AdminPageComponent, children: [
+      { path: '', redirectTo: 'dashbroad', pathMatch: 'full' },
+      { path: 'dashbroad', component: DashbroadComponent },
       { path: 'product', component: ProductComponent },
       { path: 'product/:id/edit', component: UpdateProductComponent },
       { path: 'addpro', component: AddProductComponent },
