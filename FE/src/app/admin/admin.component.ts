@@ -9,6 +9,7 @@ import { ServiceService } from '../service/service.service';
 })
 export class AdminComponent {
   DataAuthor:any={};
+  InforAnonymous:any[]=[];
   DataSearch:any={
     value:"",
     option:"",
@@ -22,13 +23,21 @@ export class AdminComponent {
       const id=idAD.get("id");
       this.controlUser.GetOneAuthor(id).subscribe((dataAuthor:any)=>{
         this.DataAuthor=dataAuthor.data;
-        
+        this.DataAuthor.message.map((xem:any)=>{
+          this.controlUser.AllAuthor().subscribe((dataUser:any)=>{
+            dataUser.data.map((show:any)=>{
+              if(show._id==xem.idUser){
+                this.InforAnonymous.push(show);
+                console.log(show);
+                
+              };
+              // console.log(xem);
+            });
+          });
+        });
       });
     });
   };
-
-
-
   Search(){
 
   }

@@ -53,7 +53,7 @@
                 </div>
             </div>
         </div>
-        <div class="w-[1000px] h-[700px] rounded-r-md bg-sky-100">
+        <div class="w-[1000px] h-[700px] rounded-r-md bg-sky-100 relative">
             <div class="w-[960px] mx-auto rounded-md mt-2 h-20 bg-sky-500 flex justify-around">
                 <form (ngSubmit)="Search()" class="flex space-x-1">
                     <input type="text" [(ngModel)]="DataSearch.value" name="value" placeholder=" search... ?" class="outline-0 pl-2 h-10 my-auto rounded-l-md w-[500px]">
@@ -64,8 +64,31 @@
                         <option value="users">users</option>
                     </select>
                     <button class="w-28 h-10 my-auto bg-white rounded-r-md active:scale-90 duration-100"><img class="w-7 h-7 mx-auto" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685791202/img_assigment/search_vaf9ia.png" alt=""></button>
-                
                 </form>
+                <input type="checkbox" hidden id="ok">
+                <label for="ok" class=" my-auto"><img class="w-10 cursor-pointer hover:-translate-y-[2px] my-auto h-10" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686578784/img_assigment/writing_rwnhtb.png" alt=""></label>
+                
+                <div class="w-[270px] h-[500px] bg-gray-200 absolute ok2">
+                    <div class="" *ngFor="let show of DataAuthor.message;index as i">
+                        <div class="flex justify-between">
+                            <div class="flex space-x-1">
+                                <img class="w-8 h-8 rounded-full" src={{show.image}} alt="">
+                                <div class="">
+                                    <p class="text-xs">{{show.name}}-({{show.phone}})</p>
+                                    <p class="text-xs text-blue-500">{{show.email}}</p>
+                                </div>
+                                
+                            </div>
+                            <div *ngFor="let y of InforAnonymous">
+                                <!-- *ngFor="let y of InforAnonymous"  -->
+                                <img *ngIf="y._id==show.idUser" class="w-5 h-5" title="{{y.email}} and Id: {{y._id}}" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686580232/img_assigment/loupe_sbs1zu.png" alt="">
+                            </div>
+                        </div>
+                        <div class="w-[250px] bg-sky-100 mx-auto">
+                            <p>- {{show.message}}</p>
+                        </div>
+                    </div>
+                </div>
                 <div class="bg-white h-fit w-fit rounded-full my-auto lightlamp flex space-x-1">
                     <img class="w-10 h-10 p-1 active:scale-90 duration-100 cursor-pointer lamp" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686402423/img_assigment/brightness_y654k5.png" alt=""><span class="font-bold text-yellow-500 my-auto pr-2">: On</span>
                 </div>

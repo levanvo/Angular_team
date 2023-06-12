@@ -17,3 +17,14 @@
     background: rgb(254, 254, 254);
     border-radius: 10px;
 }
+.ok2{
+    opacity: 0;
+    z-index: -1;
+    overflow-y: scroll;
+    top: 10%;
+    left: 60%;
+}
+#ok:checked ~ .ok2{
+    opacity: 1;
+    z-index: 1;
+}

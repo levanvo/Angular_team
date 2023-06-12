@@ -37,15 +37,13 @@ export class CartComponent {
   ArrayTotalPay: any =0;
   ValueDola(event: any, showPr: any) {
     console.log(showPr);
+    const IdPr=event.target.name;
+    console.log(name);
     
     const quantity = event.target.value;
     const totalPrice = showPr.price * quantity;
       
-    // if(this.ArrayTotalPay>1){
-      this.ArrayTotalPay=(totalPrice+this.ArrayTotalPay)-(this.ArrayTotalPay);
-    // }else{
-    //   this.ArrayTotalPay+=(totalPrice+this.ArrayTotalPay);
-    // }
+    this.ArrayTotalPay=(totalPrice+this.ArrayTotalPay)-(this.ArrayTotalPay);
   }
   ResultPay() {
     console.log(this.ArrayTotalPay);

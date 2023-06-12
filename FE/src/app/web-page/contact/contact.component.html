@@ -25,18 +25,18 @@
                 referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
         <div class="">
-            <form action="" class="w-[500px] mx-auto ">
+            <form (ngSubmit)="OnContact()" class="w-[500px] mx-auto ">
                 <p class="text-gray-600 mb-1 ">Name:</p>
-                <input required type="text" placeholder=" name...?"
+                <input [(ngModel)]="ObjectContact.name" name="name" required type="text" placeholder=" name...?"
                     class="outline-0 pl-2 w-[500px] h-10 border border-gray-500 rounded-md">
                 <p class="text-gray-600 mb-1 mt-1">Email:</p>
-                <input required type="text" placeholder=" email...?"
+                <input [(ngModel)]="ObjectContact.email" name="email"  required type="text" placeholder=" email...?"
                     class="outline-0 pl-2 w-[500px] h-10 border border-gray-500 rounded-md">
                 <p class="text-gray-600 mb-1 mt-1">Phone:</p>
-                <input required type="number" placeholder=" number-phone...?"
+                <input [(ngModel)]="ObjectContact.phone" name="phone"  required type="number" placeholder=" number-phone...?"
                     class="outline-0 pl-2 w-[500px] h-10 border border-gray-500 rounded-md">
                 <p class="text-gray-600 mb-1 mt-1">Message:</p>
-                <textarea class="outline-0 pl-2 w-[500px] h-[140px] border border-gray-500 rounded-md"
+                <textarea [(ngModel)]="ObjectContact.message" name="message"  class="outline-0 pl-2 w-[500px] h-[140px] border border-gray-500 rounded-md"
                     placeholder=" your message...?"></textarea>
                 <button type="submit"
                     class="w-44 h-10 border border-gray-500 mt-3 ml-3 hover:bg-black hover:text-white duration-200">Send</button>
