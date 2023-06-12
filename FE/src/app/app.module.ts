@@ -16,6 +16,11 @@ import { ContactComponent } from './web-page/contact/contact.component';
 import { CartComponent } from './web-page/cart/cart.component';
 import { DetailsPrComponent } from './web-page/details-pr/details-pr.component';
 import { SigninUpComponent } from './web-page/signin-up/signin-up.component';
+import { AdminUserComponent } from './admin-user/admin-user.component';
+import { DashboardComponent } from './admin/dashboard/dashboard.component';
+import { ProductsComponent } from './admin/products/products.component';
+import { CategoriesComponent } from './admin/categories/categories.component';
+import { UsersComponent } from './admin/users/users.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +34,11 @@ import { SigninUpComponent } from './web-page/signin-up/signin-up.component';
     CartComponent,
     DetailsPrComponent,
     SigninUpComponent,
+    AdminUserComponent,
+    DashboardComponent,
+    ProductsComponent,
+    CategoriesComponent,
+    UsersComponent,
   ],
   imports: [
     BrowserModule,

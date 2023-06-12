@@ -30,7 +30,8 @@
                             <div class="flex justify-center space-x-8">
                                 <p class="text-xl text-orange-500 textPrice">${{limitPr.price}}</p>
                                 <a href=""><img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1684937219/test/heart_2_wwdjc0.png" alt=""></a>
-                                <a href="cart/{{limitPr._id}}"><img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt=""></a>
+                                <!-- <a href="cart/{{limitPr._id}}"></a> -->
+                                <button (click)="AddCart(limitPr._id)"><img class="w-7 h-7 hover:scale-110 duration-100" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt=""></button>
                             </div>
                         </div>
                     </div>
@@ -73,7 +74,7 @@
                             <div class="flex justify-center space-x-8">
                                 <p class="text-xl text-orange-500 textPrice">${{limitPr.price}}</p>
                                 <a href=""><img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1684937219/test/heart_2_wwdjc0.png" alt=""></a>
-                                <a href="cart/:id"><img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt=""></a>
+                                <button (click)="AddCart(limitPr._id)"><img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt=""></button>
                             </div>
                         </div>
                     </div>

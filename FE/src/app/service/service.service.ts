@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class ServiceService {
 
   constructor(private http:HttpClient) { }
-
+  anonimous="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NDgxNmM1NzM2MzAwYmEzMzk4ZjEyNmMiLCJpYXQiOjE2ODYzOTI0ODAsImV4cCI6MTY4NzY4ODQ4MH0.-HA322nTiy15ZyYL4sZjFgVWAFhDev_g4a7sDsasgbI";
   // Products
   getAllPrLimit(limit:any,page:any,oder:any):Observable<any[]>{
     return this.http.get<any[]>(`http://localhost:8080/prlimit?_limit=${limit}?_page=${page}?_oder=${oder}`);
@@ -20,13 +20,26 @@ export class ServiceService {
     return this.http.get<any[]>(`http://localhost:8080/pr/${_id}`);
   };
   addPr(data:any):Observable<any[]>{
-    return this.http.post<any[]>(`http://localhost:8080/pr`,data);
+    return this.http.post<any[]>(`http://localhost:8080/pr`,data,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
-  updatePr(data:any):Observable<any[]>{
-    return this.http.put<any[]>(`http://localhost:8080/pr/${data._id}`,data);
+  updatePr(data:any,id:any):Observable<any[]>{
+    return this.http.put<any[]>(`http://localhost:8080/pr/${id}`,data,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
+  
   removePr(_id:any):Observable<any[]>{
-    return this.http.delete<any[]>(`http://localhost:8080/pr/${_id}`);
+    return this.http.delete<any[]>(`http://localhost:8080/pr/${_id}`,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
 
 
@@ -38,13 +51,25 @@ export class ServiceService {
     return this.http.get<any[]>(`http://localhost:8080/ct/${_id}`);
   };
   addCt(data:any):Observable<any[]>{
-    return this.http.post<any[]>(`http://localhost:8080/ct`,data);
+    return this.http.post<any[]>(`http://localhost:8080/ct`,data,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
-  updateCt(data:any):Observable<any[]>{
-    return this.http.put<any[]>(`http://localhost:8080/ct/${data._id}`,data);
+  updateCt(data:any,id:any):Observable<any[]>{
+    return this.http.put<any[]>(`http://localhost:8080/ct/${id}`,data,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
   removeCt(_id:any):Observable<any[]>{
-    return this.http.delete<any[]>(`http://localhost:8080/ct/${_id}`);
+    return this.http.delete<any[]>(`http://localhost:8080/ct/${_id}`,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
 
 
@@ -63,9 +88,17 @@ export class ServiceService {
     return this.http.get<any[]>(`http://localhost:8080/oneUser/${_id}`);
   };
   RemoveAuthor(_id:any):Observable<any[]>{
-    return this.http.delete<any[]>(`http://localhost:8080/removeUser/${_id}`);
+    return this.http.delete<any[]>(`http://localhost:8080/removeUser/${_id}`,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
   updateAuthor(data:any):Observable<any[]>{
-    return this.http.put<any[]>(`http://localhost:8080/updateUser/${data._id}`,data);
+    return this.http.put<any[]>(`http://localhost:8080/updateUser/${data._id}`,data,{
+      headers:{
+        'Authorization': `Bearer ${this.anonimous}`,
+      }
+    });
   };
 }

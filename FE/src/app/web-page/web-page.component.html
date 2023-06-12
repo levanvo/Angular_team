@@ -38,10 +38,10 @@
                     <div class="cursor-pointer flex space-x-2 hover:text-gray-600 ">
                         <img class=" w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685791202/img_assigment/user_e6v2qw.png" alt="">
                     </div>
-                    <div class="w-[300px] h-[200px] bg-gray-700 rounded-lg innerHidden">
+                    <div class="w-[300px] h-[80px] bg-gray-700 rounded-lg innerHidden">
                         <div class="flex justify-center mt-5">
                             <a href="signin_up" class="w-48 hover:font-bold hover:w-56 duration-100 rounded-xl ">
-                                <button class="p-1 w-48 hover:font-bold hover:w-56 duration-100 rounded-xl bg-white">Sign-in</button>
+                                <button class="p-1 w-48 hover:font-bold hover:w-56 duration-100 rounded-xl bg-white flex justify-center">Sign-in<img class="w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686470157/img_assigment/log-in_kggkwc.png" alt=""></button>
                             </a>
                         </div>
                     </div>
@@ -63,8 +63,13 @@
                         <button><img class="w-4 h-4 absolute top-[73px] duration-200 left-[164px]" src="https://res.cloudinary.com/darnprw0q/image/upload/v1686150669/img_assigment/synchronize_zlj67s.png" alt=""></button>
                         <p class="text-white text-center mt-2 text-xl">{{DataUser_Signin_up.name}}</p>
                         <p class="text-center text-sky-500">{{DataUser_Signin_up.email}}</p>
-                        <div class="flex justify-center mt-5">
+                        <div *ngIf="this.DataUser_Signin_up.role=='admin'" class="flex justify-center mt-5">
                             <a href="admin/{{DataUser_Signin_up._id}}" class="w-48 hover:font-bold hover:w-56 duration-100 rounded-xl ">
+                                <button class="p-1 w-48 hover:font-bold hover:w-56 duration-100 rounded-xl bg-white">Manager Panel</button>
+                            </a>
+                        </div>
+                        <div *ngIf="this.DataUser_Signin_up.role==undefined" class="flex justify-center mt-5">
+                            <a href="adminUser/{{DataUser_Signin_up._id}}" class="w-48 hover:font-bold hover:w-56 duration-100 rounded-xl ">
                                 <button class="p-1 w-48 hover:font-bold hover:w-56 duration-100 rounded-xl bg-white">Manager Panel</button>
                             </a>
                         </div>
@@ -74,10 +79,17 @@
                     </div>
                 </div>
             </div>
+            <div  *ngIf="DataUser_Signin_up.o=='ok'">
+                <a href="cart/:id">
+                    <img class="hover:border-2 border-white w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt="">
+                </a>
+            </div>
+            <div  *ngIf="DataUser_Signin_up.status==true">
+                <a href="cart/{{DataUser_Signin_up._id}}">
+                    <img class="hover:border-2 border-white w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt="">
+                </a>
+            </div>
             
-            <a href="cart/:id">
-                <img class="hover:border-2 border-white w-7 h-7" src="https://res.cloudinary.com/darnprw0q/image/upload/v1685792065/img_assigment/shopping-cart_fcdfrw.png" alt="">
-            </a>
         </div>
     </header>
 <!-- Main -->

@@ -21,15 +21,26 @@ export class WebPageComponent {
       dataAuthor.data.map((itemUser: any) => {
         if (itemUser.status == true) {
           this.DataUser_Signin_up = itemUser;
-          console.log(itemUser);
+          // console.log(itemUser);
         };
       });
     });
   };
   Search() {
-    console.log(this.DataUser_Signin_up.status);
-
-  }
+    console.log(this.DataUser_Signin_up.role);
+    
+    // this.ValueSearch.replace(" ","");
+    // this.ValueSearch.length
+    console.log(this.ValueSearch.length);
+    this.http.getAllPr().subscribe((data1:any)=>{
+      data1.map((data2:any)=>{
+        // data2.name.replace(" ","");
+        if(this.ValueSearch.toLowerCase()==data2.name.toLowerCase()){
+          window.location.href="details/"+data2._id;
+        };
+      });
+    });
+  };
   LogOut(idLogOut: any) {
     const consider = window.confirm("Are you sure !");
     if (consider) {

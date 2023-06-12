@@ -12,7 +12,7 @@ export class BodyComponent {
   DataProductsLimit2:any[]=[];
   DataCategories:any[]=[];// tất cả danh mục
   DataUsers:any[]=[];// tất cả người dùng (bao gồm admin)
-
+  UserOnline:any={};
 
   constructor(
     private controlProducts:ServiceService,
@@ -40,14 +40,32 @@ export class BodyComponent {
   };
 
 
-
-
-
-
-
-
-
-
-
+  AddCart(idCart:any){
+    console.log(idCart);
+    
+    this.controlProducts.AllAuthor().subscribe(({data}:any)=>{
+      data.map((show:any)=>{
+        if(show.status==true){
+          this.UserOnline=show;//=====>get User Online
+          // console.log(this.UserOnline);
+          
+          // if(this.UserOnline.cart.length>0){
+            let xemxet=0;
+              this.UserOnline.cart.map((see:any)=>{
+              if(see==idCart){
+                xemxet=1;
+                // console.log("trung "+ see +" va "+idCart);
+              };
+            });
+            if(xemxet==0){
+              this.UserOnline.cart.push(idCart);
+              this.controlProducts.updateAuthor(this.UserOnline).subscribe();
+              alert("Added your cart");
+            };
+          // };
+        };
+      });
+    });
+  };
 
 };
